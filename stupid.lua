@@ -123,11 +123,11 @@ local Button = Tab:CreateButton({
     	end
 })
 
-Tab:CreateSection("Pet Givers+")
+Tab:CreateSection("Pet Givers-")
 
 local Button = Tab:CreateButton({
 	Name = "Give all gold pets",
-	Description = nil,
+	Description = "Highly unoptimized stupid code",
     	Callback = function()
         local a=game:GetService("ReplicatedStorage"):WaitForChild("Pets"):WaitForChild("Gold")local b=game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PetCageEvent")for c,d in pairs(a:GetChildren())do local e={[1]=d.Name}b:FireServer(unpack(e))end
     	end
@@ -135,7 +135,7 @@ local Button = Tab:CreateButton({
 
 local Button = Tab:CreateButton({
 	Name = "Give all diamond pets",
-	Description = nil,
+	Description = "Highly unoptimized stupid code",
     	Callback = function()
         local a=game:GetService("ReplicatedStorage"):WaitForChild("Pets"):WaitForChild("Diamond")local b=game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PetCageEvent")for c,d in pairs(a:GetChildren())do local e={[1]=d.Name}b:FireServer(unpack(e))end
     	end
@@ -143,7 +143,7 @@ local Button = Tab:CreateButton({
 
 local Button = Tab:CreateButton({
 	Name = "Give all robux pets",
-	Description = nil,
+	Description = "Highly unoptimized stupid code",
     	Callback = function()
         local a=game:GetService("ReplicatedStorage"):WaitForChild("Pets"):WaitForChild("RobuxEgg")local b=game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PetCageEvent")for c,d in pairs(a:GetChildren())do local e={[1]=d.Name}b:FireServer(unpack(e))end
     	end
