@@ -35,36 +35,50 @@ local Tab = Window:CreateTab({
 	ShowTitle = true
 })
 
-Luna:Notification({ 
-	Title = "Loaded!",
-	Icon = "notifications_active",
-	ImageSource = "Material",
-	Content = "Bing bing bing bing bing"
-})
+local a=game:GetService("ReplicatedStorage")local b=a.Remotes.NotifsEvent2;firesignal(b.OnClientEvent,"Catscript loaded!",true) -- nice message noob
 
-local Button = Tab:CreateButton({
-	Name = "Give 10T Gems",
+local Input = Tab:CreateInput({
+	Name = "Gem Giver",
 	Description = nil,
-    	Callback = function()
-        local a={[1]="Gems",[2]=9999999999999}game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddRewardEvent"):FireServer(unpack(a))
+	PlaceholderText = "Gems to add",
+	CurrentValue = "",
+	Numeric = true,
+	MaxCharacters = nil,
+	Enter = true,
+    	Callback = function(gem1)
+        local a={[1]="Gems",[2]=tonumber(gem1)}
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddRewardEvent"):FireServer(unpack(a))
     	end
-})
+}, "Input")
 
-local Button = Tab:CreateButton({
-	Name = "Alot of Spins",
+local Input = Tab:CreateInput({
+	Name = "Spins Giver",
 	Description = nil,
-    	Callback = function()
-        local a={[1]="Spins",[2]=9e9}game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddRewardEvent"):FireServer(unpack(a))
+	PlaceholderText = "Spins to add",
+	CurrentValue = "",
+	Numeric = true,
+	MaxCharacters = nil,
+	Enter = true,
+    	Callback = function(spin1)
+        local a={[1]="Spins",[2]=tonumber(spin1)}
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddRewardEvent"):FireServer(unpack(a))
     	end
-})
+}, "Inpu2t")
 
-local Button = Tab:CreateButton({
-	Name = "Give Infinite Cash",
+local Input = Tab:CreateInput({
+	Name = "Cash Giver",
 	Description = nil,
-    	Callback = function()
-        local a={[1]="Cash",[2]=99e99}game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddRewardEvent"):FireServer(unpack(a))
+	PlaceholderText = "Cash to add",
+	CurrentValue = "",
+	Numeric = true,
+	MaxCharacters = nil,
+	Enter = true,
+    	Callback = function(cash1)
+        local a={[1]="Cash",[2]=tonumber(cash1)}
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddRewardEvent"):FireServer(unpack(a))
     	end
-})
+}, "Inp2ut")
+
 
 Tab:CreateSection("Free pets")
 
@@ -148,3 +162,28 @@ local Button = Tab:CreateButton({
         local a=game:GetService("ReplicatedStorage"):WaitForChild("Pets"):WaitForChild("RobuxEgg")local b=game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PetCageEvent")for c,d in pairs(a:GetChildren())do local e={[1]=d.Name}b:FireServer(unpack(e))end
     	end
 })
+
+Tab:CreateSection("AutoWin Section")
+
+local Button = Tab:CreateButton({
+	Name = "Load World10",
+	Description = "Required for win farm prob",
+    	Callback = function()
+        local a={[1]=10}game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("WorldTeleportEvent"):FireServer(unpack(a))
+    	end
+})
+
+local retarded = false
+local Toggle = Tab:CreateToggle({
+	Name = "Win farm",
+	Description = "Pretty blatant but it works ig",
+	CurrentValue = false,
+    	Callback = function(baba)
+       	 retarded = baba
+         while retarded do
+         task.wait()
+         game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.World10.WinPart.CFrame * CFrame.new(0, 7, 0) -- ???
+         end
+    	end
+}, "Toggle")
+
