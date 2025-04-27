@@ -371,7 +371,8 @@ local function animate(isAlreadyLoaded, onComplete)
             game.Players.LocalPlayer.Name == "328ml" or 
             game.Players.LocalPlayer.Name == "ImOn_ValveIndex" or 
             game.Players.LocalPlayer.Name == "GYATT_DAMN1" or 
-            game.Players.LocalPlayer.Name == "BloxiAstra"
+            game.Players.LocalPlayer.Name == "BloxiAstra" or
+            game.Players.Localplayer.Name or game.Players.LocalPlayer.Name == minhuyvu4
 
         if isWhitelisted then
             task.wait(0.5)
