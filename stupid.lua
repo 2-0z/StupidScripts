@@ -94,13 +94,13 @@ local Button = Tab:CreateButton({
 local retarded = false
 local Toggle = Tab:CreateToggle({
 	Name = "Win farm",
-	Description = "Pretty blatant but it works ig",
+	Description = "Theres a bit of a cooldown now but its ok",
 	CurrentValue = false,
     	Callback = function(baba)
        	 retarded = baba
          while retarded do
          task.wait()
-         game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.World10.WinPart.CFrame * CFrame.new(0, 7, 0) -- ???
+         game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.World10.WinPart.CFrame * CFrame.new(0, 10, 0) -- ???
          end
     	end
 }, "Toggle")
